@@ -3,7 +3,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
     return (
-        <div className="mt-[200px] bg-[#244D3F] text-white p-10 space-y-12">
+        <div className="mt-12 bg-[#244D3F] text-white p-10 space-y-12">
             <div className="text-center space-y-5 ">
                 <h2 className="text-5xl font-extrabold">KeenKeeper</h2>
                 <p className="text-[#FAFAFA]">Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>

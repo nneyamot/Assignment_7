@@ -4,6 +4,7 @@ import NavBarPage from "./navbar/page";
 import HeroPage from "@/Components/Hero";
 import CollectionOfThings from "@/Components/CollectionOfThings";
 import Footer from "@/Components/Footer";
+import FriendProvider from "./context/FriendProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,9 +34,14 @@ export default function RootLayout({ children }) {
           <CollectionOfThings></CollectionOfThings>
         </section>
         
-        <main>
+        {/* <main>
           {children}
-        </main>
+        </main> */}
+        <FriendProvider>
+          {
+            children
+          }
+        </FriendProvider>
 
         <section>
           <Footer></Footer>

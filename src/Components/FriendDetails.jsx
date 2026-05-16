@@ -49,7 +49,7 @@ const FriendDetails = ({ friendDetails }) => {
             'next_due_date': next_due_date,
         }
         setVideo([...video, meetingType])
-        setAll([...text,meetingType])
+        setAll([...video,meetingType])
     }
 
     return (

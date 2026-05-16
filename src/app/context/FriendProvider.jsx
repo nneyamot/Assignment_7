@@ -9,7 +9,7 @@ const FriendProvider = ({children}) => {
     const [calls , setCalls]=useState([]);
     const [text , setText]=useState([]);
     const [video, setVideo]=useState([]);
-    const [all , setAll]=useState([]);
+    const  [all , setAll]=useState([]);
 
 
     const info={

@@ -5,6 +5,7 @@ import HeroPage from "@/Components/Hero";
 import CollectionOfThings from "@/Components/CollectionOfThings";
 import Footer from "@/Components/Footer";
 import FriendProvider from "./context/FriendProvider";
+import { ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,6 +43,7 @@ export default function RootLayout({ children }) {
             children
           }
         </FriendProvider>
+        <ToastContainer />
 
         <section>
           <Footer></Footer>

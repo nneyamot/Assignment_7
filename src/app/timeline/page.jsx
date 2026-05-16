@@ -16,16 +16,10 @@ const TimeLinePage = () => {
         setAll(items)
     }
 
-
-
-
-
-
-
     return (
         <div className="m-12 space-y-5">
             <h1 className="text-5xl font-extrabold ">Timeline </h1>
-            <h1>size of all : {all.length}</h1>
+            {/* <h1>size of all : {all.length}</h1> */}
             <div className="flex justify-between items-center shadow p-5 w-120">
                 <h1>Filter Timeline</h1>
                 <details className="dropdown">

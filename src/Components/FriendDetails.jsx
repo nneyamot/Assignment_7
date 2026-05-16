@@ -6,11 +6,12 @@ import { BiSolidPhoneCall } from "react-icons/bi";
 import { BsArchiveFill } from "react-icons/bs";
 import { FaVideo } from "react-icons/fa";
 import { MdDeleteOutline, MdSnooze, MdTextsms } from "react-icons/md";
+import { toast } from "react-toastify";
 
 const FriendDetails = ({ friendDetails }) => {
-    const { name, picture, status, tags, email, days_since_contact, bio, next_due_date } = friendDetails;
+    const { name, picture, status, tags, email, days_since_contact, bio, next_due_date, goal } = friendDetails;
 
-    const { calls, setCalls, text, setText, video, setVideo, all, setAll  } = useContext(friendContext);
+    const { calls, setCalls, text, setText, video, setVideo, all, setAll } = useContext(friendContext);
 
 
     //    handle calls function 
@@ -22,7 +23,10 @@ const FriendDetails = ({ friendDetails }) => {
             'next_due_date': next_due_date,
         }
         setCalls([...calls, meetingType])
-        setAll([...calls,meetingType])
+        toast.success(`Call With ${name}`,{
+            position: "top-center",
+        })
+        //setAll([...calls,meetingType])
     }
 
     // console.log(calls)
@@ -36,7 +40,10 @@ const FriendDetails = ({ friendDetails }) => {
             'next_due_date': next_due_date,
         }
         setText([...text, meetingType]);
-        setAll([...text,meetingType])
+        toast.success(`Text With ${name}`,{
+            position: "top-center",
+        })
+        // setAll([...text,meetingType])
     }
     // console.log(text);
 
@@ -49,7 +56,11 @@ const FriendDetails = ({ friendDetails }) => {
             'next_due_date': next_due_date,
         }
         setVideo([...video, meetingType])
-        setAll([...video,meetingType])
+        toast.success(`video With ${name}`,{
+            position: "top-center",
+            
+        })
+        //setAll([...video,meetingType])
     }
 
     return (
@@ -94,15 +105,15 @@ const FriendDetails = ({ friendDetails }) => {
                 {/* 1xt 3div  */}
                 <div className="grid grid-cols-3 gap-3 text-[#64748B]">
                     <div className="shadow-2xl p-2 text-center">
-                        <h1 className="text-[#244D3F] text-xl font-bold">62</h1>
+                        <h1 className="text-[#244D3F] text-xl font-bold">{days_since_contact}</h1>
                         <p>Days Since Contact</p>
                     </div>
                     <div className="shadow-2xl p-2 text-center">
-                        <h1 className="text-[#244D3F] text-xl font-bold"> 30</h1>
+                        <h1 className="text-[#244D3F] text-xl font-bold">{goal}</h1>
                         <p>Goal (Days)</p>
                     </div>
                     <div className="shadow-2xl p-2 text-center">
-                        <h1 className="text-[#244D3F] text-xl font-bold">Feb 27, 2026</h1>
+                        <h1 className="text-[#244D3F] text-xl font-bold">{next_due_date}</h1>
                         <p> Next Due</p>
                     </div>
                 </div>
@@ -113,8 +124,9 @@ const FriendDetails = ({ friendDetails }) => {
                         <button className="btn">Edit</button>
 
                     </div>
-                    <p>Connect every <span className="font-bold text-xl text-[#244D3F]"> 30 days</span></p>
+                    <p>Connect every <span className="font-bold text-xl text-[#244D3F]"> {goal} days</span></p>
                 </div>
+
                 {/* 3rd div  */}
                 <div className=" space-y-3 shadow-2xl p-5">
                     <h1 className="text-2xl font-bold text-[#244D3F]">Quick Check-In</h1>
